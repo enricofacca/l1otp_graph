@@ -10,7 +10,7 @@ ctrl={};
 ctrl.study_transformation="square";
 ctrl.power_transformation=2.0;
 
-ctrl.max_iterations=500;
+ctrl.max_iterations=50;
 ctrl.tol=1e-3;
 
 ctrl.verbose=1;
@@ -33,7 +33,7 @@ ctrl.contraction_deltat=2.0;
 % non-linear solver 
 ctrl.scheme="gf";
 ctrl.max_nonlinear_iterations=10;
-ctrl.tol_nonlinear=1e-10;
+ctrl.tol_nonlinear=1e-8;
 
 % linear solver
 ctrl.relax_prec11=1.0e-11;

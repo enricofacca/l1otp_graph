@@ -16,7 +16,14 @@ npot=jacobian.npot;
 
 	% inverse of primal schur complement
 	ctrl_S = ctrl_solver;
-	ctrl_S.init('agmg',1e-1,100);%ctrl.inner_tol,ctrl.inerr_max_iterations); 
+	ctrl_S.init('agmg',... % method
+							1e-1,... % tolerance
+							20,...% iter
+							0.0,...% omega (not used)
+							0,... % verbose
+							'invSp',...% label
+							1);% agmg_seed
+						 
 	inv_S = sparse_inverse;
 	inv_S.init(S_primal+ctrl.relax_prec11*speye(npot,npot), ctrl_S);
 
@@ -32,7 +39,7 @@ npot=jacobian.npot;
 
 	% set controls outer solver
 	ctrl_outer = ctrl_solver;
-	ctrl_outer.init('fgmres',1e-5,200); 
+	ctrl_outer.init('fgmres',1e-4,200); 
 	[sol,info_linear_solver]= apply_iterative_solver(@(z) jacobian.apply(z), rhs, ...
 																		 ctrl_outer, ...
 																		 [],prec);

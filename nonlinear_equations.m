@@ -7,11 +7,9 @@ function [f] = nonlinear_equations(gfvar,gfvar_old,gradpot,problem,ctrl,solution
 	problem.weight.*(0.5*trans_prime.*(gradpot.^2-1.0))  ...
 	- problem.weight.*(gfvar-gfvar_old)/ctrl.deltat;
 	if (solution.npot_dirichlet > 0)
-		solution.npot_dirichlet
 		f(solution.pot_dirichlet(1:solution.npot_dirichlet))=0;
 	end
 	if (solution.ntdens_dirichlet > 0)
-		solution.ntdens_dirichlet
 		f(solution.npot + solution.tdens_dirichlet(1:solution.ntdens_dirichlet))=0;
 	end
 end
