@@ -2,6 +2,7 @@ close all
 
 folder = 'data_test_cases/'
 folder = '/home/fh/runs_matlab_graph/'
+folder = 'make_graph/'
 
 %file=strcat('/home/fh/runs_matlab_graph/erdos_graph_p',level,'.dat')
 file=strcat(folder,label_graph,'.dat')

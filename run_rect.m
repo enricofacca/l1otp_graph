@@ -1,5 +1,9 @@
 label_problem=strcat("rect_0064")
 label_graph=strcat("grid_0064_graph")
+
+label_problem=strcat("rect0016")
+label_graph=strcat("grid0016")
+
 loader;
 
 % set controls
