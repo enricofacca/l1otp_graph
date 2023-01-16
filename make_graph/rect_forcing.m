@@ -15,6 +15,8 @@ function [forcing] = rect_forcing(topol,coord)
 			end
 		end
 	end
+	mass = sum(abs(forcing))/2;
+	forcing = forcing/mass;	
 end
-		
-	
+
+
